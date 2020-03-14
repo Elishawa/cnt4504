@@ -18,7 +18,7 @@ int main() {
     // define the address of the server
     struct sockaddr_in server_address;
     server_address.sin_family = AF_INET;
-    server_address.sin_port = htons(9002);
+    server_address.sin_port = htons(50001);
     server_address.sin_addr.s_addr = INADDR_ANY;
 
     // bind the socket to the specified IP and port number

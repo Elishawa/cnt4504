@@ -17,7 +17,7 @@ int main() {
     struct sockaddr_in server_address;
     server_address.sin_family = AF_INET;
     // pass the port number you want to connect to remotely to htons which converts it to the right format to read 
-    server_address.sin_port = htons(9002);
+    server_address.sin_port = htons(50001);
     // specify network address
     server_address.sin_addr.s_addr = INADDR_ANY;
 
