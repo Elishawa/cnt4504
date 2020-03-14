@@ -1,0 +1,7 @@
+------------------------------------ help------------------------------------ 
+To use: 
+  1. clone to your local directory
+  2. run make
+  3. run make server
+  4. In one terminal session run the server executable
+  5. In another terminal session run the clinet executable
