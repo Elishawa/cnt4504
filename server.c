@@ -7,9 +7,9 @@
 #include <netinet/in.h>
 #include <unistd.h>
 
-int main() {
+int main(int argc, char *argv[]) {
 
-    char server_message[256] = "Congratulations, you have connected to the server :)";
+    char server_message[256] = "Connection with server has been established";
 
     //  creates the server socket
     int server_socket;
@@ -31,6 +31,23 @@ int main() {
     client_socket = accept(server_socket, NULL, NULL);
 
     send(client_socket, server_message, sizeof(server_message), 0);
+
+    char buffer[512];
+
+    FILE *fp;
+    int ch = 0;
+    fp = fopen("example_server.txt", "a");
+    int words;
+
+    read(client_socket, &words, sizeof(int));
+
+    while(ch != words) {
+        read(client_socket, buffer, 512);
+        fprintf(fp, "%s", buffer);
+        ch++;
+    }
+
+    printf("Server: the file has been received from client");
 
     // close the socket
     close(server_socket);
