@@ -9,7 +9,7 @@
 
 int main(int argc, char *argv[]) {
 
-    char server_message[256] = "Connection with server has been established";
+    char server_message[256] = "+Hello from VSFTP Service";
 
     //  creates the server socket
     int server_socket;

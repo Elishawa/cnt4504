@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     int connection_status = connect(network_socket, (struct sockaddr *) &server_address, sizeof(server_address));
     // value of 0 = connection ok, -1 = something went wrong
     if (connection_status == -1){
-        printf("Client: Error connecting to server socket\n\n");
+        printf("-VSFTP Server is out for lunch\n");
     }
 
     // retrieve network_socket
