@@ -37,33 +37,6 @@ int main(int argc, char *argv[]) {
     // print the data returned from server
     printf("Server: %s\n", server_response);
 
-    char buffer[512];
-
-    FILE *f;
-    int words = 0;
-
-    char c;
-
-    f = fopen(argv[1], "r");
-    while((c = getc(f)) != EOF) {
-        fscanf(f, "%s", buffer);
-        if(isspace(c) || c == '\t'){
-            words++;
-        }
-    }
-
-    write(network_socket, &words, sizeof(int));
-    // takes the file pointer back to the beginning of the file
-    rewind(f);
-
-    char ch;
-    while(ch != EOF){
-        fscanf(f, "%s", buffer);
-        write(network_socket, buffer, 512);
-        ch = fgetc(f);
-    }
-    printf("Client: file sent to server \n");
-
     // close the socket
     close(network_socket);
     

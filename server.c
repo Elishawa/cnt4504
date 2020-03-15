@@ -32,23 +32,6 @@ int main(int argc, char *argv[]) {
 
     send(client_socket, server_message, sizeof(server_message), 0);
 
-    char buffer[512];
-
-    FILE *fp;
-    int ch = 0;
-    fp = fopen("example_server.txt", "a");
-    int words;
-
-    read(client_socket, &words, sizeof(int));
-
-    while(ch != words) {
-        read(client_socket, buffer, 512);
-        fprintf(fp, "%s", buffer);
-        ch++;
-    }
-
-    printf("Server: the file has been received from client");
-
     // close the socket
     close(server_socket);
 
