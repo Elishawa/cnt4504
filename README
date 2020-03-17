@@ -4,4 +4,4 @@ To use:
   2. run make
   3. run make server
   4. In one terminal session run the server executable
-  5. In another terminal session run the clinet executable
+  5. In another terminal session run the client executable
